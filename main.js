@@ -140,6 +140,11 @@ stars.forEach((star, index) => {
 
 const swiper = new Swiper('.swiper', {
     
+     autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+
     effect: "flip",
     grabCursor: true,
     
