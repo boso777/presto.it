@@ -151,6 +151,22 @@ font-weight: 900;
 
 }
 
+.swiper{
+  height: 600px;
+}
+
+.card-review{
+  height: 250px;
+  width: 500px;
+  border: 2px var(--yellow) solid;
+  border-radius: 22px;
+}
+
+.swiper-slide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 @media screen and (max-width: 600px){
