@@ -174,3 +174,36 @@ font-weight: 900;
     position: static;
   }
 }
+
+/* pagina annunci */
+
+
+.accordion-item, .accordion-button{
+  color: var(--yellow);
+  background-color: var(--black);
+}
+
+.accordion-button, .accordion-item :focus-visible{
+  outline: none;
+}
+
+.accordion-button, .accordion-item :focus{
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed){
+  background-color: var(--black);
+  color: var(--red);
+}
+
+
+.card-custom{
+  
+  width: 300px;
+  margin: 10px 10px;
+  border: 2px solid var(--yellow);
+  border-radius: 1rem;
+  text-align: center;
+}
