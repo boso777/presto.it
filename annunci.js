@@ -3,7 +3,9 @@ fetch(`./annunci.json`).then( (response)=> response.json() ).then( (data)=>{
     
     let radiowrapper = document.getElementById(`radiowrapper`);
     let cardWrapper = document.getElementById(`cardWrapper`);
-    
+    let priceInput = document.getElementById(`priceInput`);
+    let wrapperPrice = document.getElementById(`wrapperPrice`);
+
 // funzione per tagliare i titoli che sono più lunghi di 13 caratteri, controlla la lenght dell'elemento string in entrata e se è maggiore di 13, ritorna solo la prima parola dato che indichiamo il separatore spazio come criterio;
 
     function cutSentence(string){
@@ -78,13 +80,39 @@ fetch(`./annunci.json`).then( (response)=> response.json() ).then( (data)=>{
     // funzione che data la categoria come parametro, dentro la variabile filtered, filtra dall'array data, solo gli elementi che hanno la categorya == a quella inserita nel parametro, poi richiama la funzione che crea le card, dandole come dato su cui iterare l'array filtrato.
     
     function filterByCategory(categoria){
+        if(categoria != `All`){
         let filtered = data.filter((el) => el.category == categoria)
         createAnnounce(filtered);        
+    }else{
+        createAnnounce(data);
     }
+}
     
     
-    createAnnounce();
+
+    function setPriceInput(){
+        //dopo aver catturato l'input voglio settare come proprietà max dello stesso il valore più altro fra i price di ogni annuncio del json per farlo avrò bisogno di un array con solo i prezzi, lo ordino in maniera decrescente e prendo l'elemento con il valore più alto
     
+        let prices = data.map((el)=> +el.price );
+        prices.sort((a, b) => b - a);
+        console.log(prices);
+        let maxprices = Math.ceil(prices[0]);
+        console.log(maxprices);
+        priceInput.max = maxprices;
+        priceInput.value = maxprices;
+        
+        
+    }
+
+    function filterByPrice(){
+        let filtered = data.filter((el)=>{el.price < priceInput.value})
+        createAnnounce(filtered);
+    }
+
+    createAnnounce(data);
+    
+    setPriceInput();
+    filterByPrice();
 }) 
 
 
