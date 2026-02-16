@@ -63,7 +63,7 @@
         
         <h3>Filtra per:</h3>
         
-        <div class="accordion" id="accordionExample">
+        <div class="accordion sticky-top" id="accordionExample">
           <!-- filtro per categoria -->
           <div class="accordion-item">
             <h2 class="accordion-header">
@@ -89,10 +89,10 @@
                 Prezzo
               </button>
             </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body" id="wrapperPrice">
                 <input type="range" min="0" max="" value="" id="priceInput" class="w-100">
-                <p class="lead" id="priceValue">0</p>
+                <p class="lead" id="priceValue" class="text-right"></p>
               </div>
             </div>
           </div>
@@ -103,9 +103,9 @@
                 Keyword
               </button>
             </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <input type="text" name="" id="wordInput">
               </div>
             </div>
           </div>

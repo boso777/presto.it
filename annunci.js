@@ -1,10 +1,13 @@
 fetch(`./annunci.json`).then( (response)=> response.json() ).then( (data)=>{
     
+
+    data.sort((a, b) => a.price - b.price)
     
     let radiowrapper = document.getElementById(`radiowrapper`);
     let cardWrapper = document.getElementById(`cardWrapper`);
     let priceInput = document.getElementById(`priceInput`);
-    let wrapperPrice = document.getElementById(`wrapperPrice`);
+    let priceValue = document.getElementById(`priceValue`);
+    let wordInput = document.getElementById(`wordInput`);
 
 // funzione per tagliare i titoli che sono più lunghi di 13 caratteri, controlla la lenght dell'elemento string in entrata e se è maggiore di 13, ritorna solo la prima parola dato che indichiamo il separatore spazio come criterio;
 
@@ -95,24 +98,40 @@ fetch(`./annunci.json`).then( (response)=> response.json() ).then( (data)=>{
     
         let prices = data.map((el)=> +el.price );
         prices.sort((a, b) => b - a);
-        console.log(prices);
         let maxprices = Math.ceil(prices[0]);
-        console.log(maxprices);
         priceInput.max = maxprices;
         priceInput.value = maxprices;
-        
-        
+        priceValue.innerHTML = maxprices;
     }
 
     function filterByPrice(){
-        let filtered = data.filter((el)=>{el.price < priceInput.value})
-        createAnnounce(filtered);
+        let filtered = data.filter((annuncio) => +annuncio.price <= priceInput.value );
+        createAnnounce(filtered);  
+        
     }
 
+
+   function filterByWord(parola){
+    let filtered = data.filter( (annuncio)=> annuncio.name.toLowerCase().includes(parola.toLowerCase()) );
+    createAnnounce(filtered);    
+   }
+
+    priceInput.addEventListener(`input`, ()=>{
+        priceValue.innerHTML = priceInput.value
+        filterByPrice();
+    })
+    
+    wordInput.addEventListener(`input`, ()=>{
+        filterByWord(wordInput.value);
+    })
+
+    
     createAnnounce(data);
     
     setPriceInput();
-    filterByPrice();
+
+    
+
 }) 
 
 
