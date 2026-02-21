@@ -33,7 +33,7 @@ window.addEventListener(`scroll`, () => {
             link.style.color = "var(--yellow)";
         });
         logoNavbar.src = `./media/logo white.png`;
-        lightsaber.src = `./media/SPADA LASER YELLOW.png`;
+        lightsaber.src = `./media/tools logo.png`;
     }
 });
 

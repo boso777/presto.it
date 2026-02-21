@@ -52,12 +52,12 @@ h4,
 /* navbar */
 
 .logo2{
-  width: 100px;
+  width: 60px;
   transition: 0.5s;
 }
 
 .navbar{
-  height: 60px;
+  height: 100px;
   transition: 0.5s ;
 }
 
