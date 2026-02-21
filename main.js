@@ -32,7 +32,7 @@ window.addEventListener(`scroll`, () => {
         links.forEach((link) => {
             link.style.color = "var(--yellow)";
         });
-        logoNavbar.src = `./media/logo yellow.png`;
+        logoNavbar.src = `./media/logo white.png`;
         lightsaber.src = `./media/SPADA LASER YELLOW.png`;
     }
 });
@@ -86,10 +86,10 @@ observer.observe(firstNumber);
 
 
 let reviews = [
-    {user: `Matteo`, description: `Il più bel sito del mondo`, rank: 5},
+    {user: `Matteo`, description: `Fornitore ottimo, consigliato!`, rank: 5},
     {user: `Alin`, description: `Schifo`, rank: 1},
-    {user: `Michael`, description: `Mi piace ma odio Star Trek`, rank: 3},
-    {user: `Arina`, description: `Odioso!`, rank: 2},
+    {user: `Michael`, description: `Ottimo customer care!`, rank: 3},
+    {user: `Arina`, description: `Moto non troppo perforamante`, rank: 2},
 ]
 
 let swiperWrapper = document.querySelector(`.swiper-wrapper`)

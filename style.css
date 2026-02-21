@@ -1,5 +1,5 @@
 * {
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body{
@@ -16,11 +16,11 @@ h4,
 .h2,
 .h3,
 .h4 {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Cascadia Mono", sans-serif; !important
 }
 
 :root {
-  --yellow: rgb(255, 232, 31);
+  --yellow: rgb(255, 255, 255);
   --black: rgb(23, 23, 23);
   --red: rgb(228, 32, 43);
 }
@@ -81,7 +81,7 @@ h4,
 }
 
 .logo {
-  width: 50px;
+  width: 40px;
 }
 
 .logo:focus-visible {
@@ -92,7 +92,7 @@ h4,
 /* header */
 
 .header{
-  background-image: linear-gradient(rgba(0,0,0), transparent, rgba(0,0,0)), url(./media/star\ wars\ hyperspace.webp);
+  background-image: linear-gradient(rgba(0,0,0), transparent, rgba(0,0,0)), url(https://images.pexels.com/photos/11890996/pexels-photo-11890996.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

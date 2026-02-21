@@ -1,9 +1,9 @@
 let opener = document.querySelector(`.opener`);
 let teacher = [
-    { name: `Matteo`, description: `Docente frontend di hack69`, url: `https://picsum.photos/220`},
-    { name: `Luca`, description: `Docente backend`, url: `https://picsum.photos/201`},
-    { name: `Nicola`, description: `Docente frontend bravo`, url: `https://picsum.photos/203`},
-    { name: `Davide`, description: `Docente backend bravo`, url: `https://picsum.photos/204`},
+    { name: `Matteo`, description: `Pilota e meccanico`, url: `https://picsum.photos/220`},
+    { name: `Luca`, description: `Meccanico`, url: `https://picsum.photos/201`},
+    { name: `Nicola`, description: `Seller`, url: `https://picsum.photos/203`},
+    { name: `Davide`, description: `Customare Care`, url: `https://picsum.photos/204`},
 ];
 
 let circle = document.querySelector(`.circle`);
