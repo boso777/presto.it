@@ -8,6 +8,7 @@ let teacher = [
 
 let circle = document.querySelector(`.circle`);
 let wrapper = document.querySelector(`.wrapper`);
+let inner = document.querySelector(`.inner`);
 
 teacher.forEach( (el, i) => {
     let div = document.createElement(`div`);
@@ -23,7 +24,7 @@ let check = false;
 
 opener.addEventListener(`click`, ()=>{
     if (check == false) {
-        
+        flipCard.classList.remove(`d-none`);
         opener.style.transform = `rotate(45deg)`;
         opener.style.transition = `0.5s`
         
@@ -32,12 +33,14 @@ opener.addEventListener(`click`, ()=>{
             el.style.rotate = `${angle}deg`;
             el.style.transform = `translate(150px) rotate(-${angle}deg)`;
             el.style.cursor = `pointer`;
+        
+
         })
         
         check = true;
         
     }else{
-        
+        flipCard.classList.add(`d-none`);
         opener.style.transform = `rotate(0deg)`;
         opener.style.transition = `0.5s`
         
@@ -52,13 +55,20 @@ opener.addEventListener(`click`, ()=>{
     }   
 })
 
-let wrapperCard = document.querySelector(`#wrapperCard`);
+let flipCard = document.querySelector(`.flip-card`);
+let cardName = document.querySelector(`#cardName`);
+let cardDescription = document.querySelector(`#cardDescription`);
+let innerFace = document.querySelector(`.inner-face`);
+
+
 
 movedDivs.forEach((el, i) => {
     el.addEventListener(`click`, () => {
-        wrapperCard.innerHTML = ``;
         let prof = teacher[i];
-        let div = document.createElement(`div`);
+        innerFace.style.backgroundImage = `url(${prof.url})`
+        cardName.innerHTML = prof.name;
+        cardDescription.innerHTML = prof.description;
+
         
     })
 })
