@@ -118,7 +118,7 @@ fetch(`./annunci.json`)
 }
 
 priceInput.addEventListener(`input`, () => {
-  priceValue.innerHTML = priceInput.value;
+  priceValue.innerHTML = priceInput.value;  
   globalFilter();
 });
 

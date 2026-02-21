@@ -31,6 +31,7 @@ opener.addEventListener(`click`, ()=>{
             let angle = (360 * i / movedDivs.length);
             el.style.rotate = `${angle}deg`;
             el.style.transform = `translate(150px) rotate(-${angle}deg)`;
+            el.style.cursor = `pointer`;
         })
         
         check = true;
@@ -51,4 +52,14 @@ opener.addEventListener(`click`, ()=>{
     }   
 })
 
+let wrapperCard = document.querySelector(`#wrapperCard`);
+
+movedDivs.forEach((el, i) => {
+    el.addEventListener(`click`, () => {
+        wrapperCard.innerHTML = ``;
+        let prof = teacher[i];
+        let div = document.createElement(`div`);
+        
+    })
+})
 

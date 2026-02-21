@@ -253,3 +253,57 @@ h4,
     background-repeat: no-repeat;
     background-size: cover
   }
+  
+  
+  .card{
+    width: 300px;
+    height: 450px;
+    transition: 0.5s;
+    border-radius: 22px;
+    background-color: var(--black);
+  }
+  
+  
+  .card:hover > .inner{
+    transform: rotateY(180deg);
+    transition: 0.5s;
+  }
+  
+  
+  .inner{
+    height: 450px;
+    width: 300px;
+    background-color: var(--black);
+    border: 2px solid var(--yellow); 
+    border-radius: 22px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+  }
+  
+  .inner-face{
+    width: 300px;
+    height: 450px;
+    background-image: url(https://picsum.photos/300/500);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: cover;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 22px;
+    
+  }
+  
+  .inner-back{
+    height: 450px;
+    width: 300px;
+    border-radius: 22px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--yellow);
+  }
